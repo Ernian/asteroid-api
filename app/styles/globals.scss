@@ -1,0 +1,15 @@
+@import '_reset';
+@import 'variables';
+
+body {
+  font-family: Helvetica, Arial, sans-serif;
+  background-color: $main-background;
+  color: $main-text;
+  font-size: 16px;
+  line-height: 24px;
+}
+
+.main {
+  position: relative;
+  min-height: 100vh;
+}

@@ -1,0 +1,18 @@
+.cart {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px;
+  background-color: #232526;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+.title {
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 24px;
+  letter-spacing: 0px;
+}
