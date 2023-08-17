@@ -7,9 +7,9 @@ body {
   color: $main-text;
   font-size: 16px;
   line-height: 24px;
-}
 
-.main {
-  position: relative;
-  min-height: 100vh;
+  .main {
+    position: relative;
+    min-height: 100vh;
+  }
 }

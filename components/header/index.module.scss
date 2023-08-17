@@ -2,11 +2,11 @@
 
 .header {
   padding: 16px;
-}
 
-.title {
-  color: $main-orange;
-  font-size: 32px;
-  text-transform: uppercase;
-  margin-bottom: 10px;
+  .title {
+    color: $main-orange;
+    font-size: 32px;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+  }
 }

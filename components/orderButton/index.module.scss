@@ -1,0 +1,26 @@
+@import '/app/styles/variables';
+
+.btn {
+  padding: 4px 12px;
+  background-color: rgba($color: $main-orange, $alpha: .15);
+
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: 12px;
+  line-height: 20px;
+  border-radius: 24px;
+}
+
+.btn:hover {
+  cursor: pointer;
+}
+
+.in-order {
+  // background-color: #F5DED9;
+  color: $main-text;
+}
+
+.no-order {
+  // background-color: rgba($color: $main-orange, $alpha: .15);
+  color: $main-orange;
+}

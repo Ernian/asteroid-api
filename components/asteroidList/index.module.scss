@@ -1,0 +1,38 @@
+.container {
+  padding: 10px 10px 100px 60px;
+  position: relative;
+  z-index: 10;
+
+  .title {
+    font-size: 28px;
+    font-weight: 700;
+    line-height: 36px;
+  }
+
+  .selected-measure,
+  .measure {
+    cursor: pointer;
+  }
+
+  .selected-measure {
+    font-weight: 700;
+  }
+
+  .measure {
+    text-decoration: underline;
+  }
+}
+
+.footer {
+  padding: 16px;
+  background-color: #232526;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 10;
+}
+
+.last {
+  height: 150px;
+}
