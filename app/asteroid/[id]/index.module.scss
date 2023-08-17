@@ -1,0 +1,15 @@
+.container {
+  padding: 10px 10px 100px 60px;
+  position: relative;
+  z-index: 10;
+
+  .title {
+    font-size: 28px;
+    font-weight: 700;
+    line-height: 36px;
+  }
+
+  .approach {
+    padding: 20px 10px;
+  }
+}

@@ -20,7 +20,13 @@ export interface IAsteroidInfo {
     miss_distance: {
       kilometers: string,
       lunar: string,
-    }
+    },
+    relative_velocity: {
+      kilometers_per_hour: string,
+      kilometers_per_second: string,
+      miles_per_hour: string,
+    },
+    orbiting_body: string
   }],
   estimated_diameter: {
     kilometers: IEstimatedDiameter,

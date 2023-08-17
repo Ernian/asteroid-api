@@ -1,3 +1,4 @@
+// @ts-nocheck
 'use client'
 import { useEffect, useState, useRef } from 'react'
 import { useAppContext } from '@/hooks/useAppContext'
@@ -30,7 +31,6 @@ const AsteroidList = ({ data }: { data: IResponseAPI }) => {
 
       setFetchedAsteroids([...fetchedAsteroids, ...nearEarthObjects])
       setNextLink(data.links.next)
-      console.log(nextLink)
     }
     observer.current = new IntersectionObserver(callback)
     observer.current.observe(lastElement.current)

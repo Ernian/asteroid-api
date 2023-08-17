@@ -1,5 +1,12 @@
+@import '/app/styles/variables';
+
 .card {
   padding: 20px 5px;
+
+  .link {
+    color: $main-text;
+    text-decoration: none;
+  }
 
   .title {
     font-weight: 700;

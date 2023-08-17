@@ -20,9 +20,21 @@ export const fetchAsteroids = async (url = process.env.NEXT_PUBLIC_API_ASTEROIDS
   return data
 }
 
-export const getFormattedDate = (asteroid: IAsteroidInfo): string => {
-  const date = asteroid.close_approach_data[0].close_approach_date
+export const fetchAsteroid = async (id: string) => {
+  const url = `${process.env.NEXT_PUBLIC_API_ASTEROID_URL}/${id}?api_key=${process.env.NEXT_PUBLIC_API_KEY}`
 
+  if (!url) {
+    throw new Error('Не найден url для запроса данных')
+  }
+  const response = await fetch(url)
+  if (!response.ok) {
+    throw new Error('Не удалось загрузить данные с сервера')
+  }
+  const data = await response.json() as IAsteroidInfo
+  return data
+}
+
+export const getFormattedDate = (date: string): string => {
   const months = [,
     'января',
     'февраля',
