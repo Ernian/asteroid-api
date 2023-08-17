@@ -14,6 +14,7 @@ const AsteroidList = ({ data }: { data: IResponseAPI }) => {
   const [state, dispatch] = useAppContext()
   const [nextLink, setNextLink] = useState(addHttpsLink(data.links.next))
   const [fetchedAsteroids, setFetchedAsteroids] = useState<IAsteroidInfo[][]>([])
+  const [isLoading, setIsLoading] = useState(false)
 
   const lastElement = useRef<HTMLDivElement>()
   const observer = useRef()
@@ -25,12 +26,14 @@ const AsteroidList = ({ data }: { data: IResponseAPI }) => {
     const callback = async (entries, observer) => {
       if (!entries[0].isIntersecting) return
 
+      setIsLoading(true)
       const response = await fetch(nextLink)
       const data = await response.json() as IResponseAPI
       const nearEarthObjects = getNearEarthObjects(data).slice(1)
 
       setFetchedAsteroids([...fetchedAsteroids, ...nearEarthObjects])
       setNextLink(addHttpsLink(data.links.next))
+      setIsLoading(false)
     }
     observer.current = new IntersectionObserver(callback)
     observer.current.observe(lastElement.current)
@@ -92,6 +95,7 @@ const AsteroidList = ({ data }: { data: IResponseAPI }) => {
         {
           !!fetchedAsteroids.length && renderAsteroids(fetchedAsteroids)
         }
+        {isLoading && <p>Загрузка...</p>}
       </section>
       <div
         ref={lastElement}
