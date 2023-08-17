@@ -26,7 +26,7 @@ const EarthImage = () => {
         })
         return
       }
-      if (screenWidth > 1024 && screenWidth < 1364) {
+      if (screenWidth > 1023 && screenWidth < 1355) {
         setImage({
           src: '/img/earth-md.png',
           width: 304,
@@ -34,7 +34,7 @@ const EarthImage = () => {
         })
         return
       }
-      if (screenWidth > 1364) {
+      if (screenWidth > 1354) {
         setImage({
           src: '/img/earth-lg.png',
           width: 400,
@@ -42,7 +42,7 @@ const EarthImage = () => {
         })
       }
     })
-
+    resizeHandler()
     window.addEventListener('resize', resizeHandler)
 
     return () => {

@@ -3,10 +3,18 @@
 .header {
   padding: 16px;
 
+  @media (min-width: 1024px) {
+    padding: 24px;
+  }
+
   .title {
     color: $main-orange;
     font-size: 32px;
     text-transform: uppercase;
     margin-bottom: 10px;
+
+    @media (min-width: 1024px) {
+      font-size: 35px;
+    }
   }
 }
