@@ -5,14 +5,14 @@ import { useAppContext } from '@/hooks/useAppContext'
 import { appActions } from '@/context'
 import AsteroidCard from '../asteroidCard'
 import Cart from '../cart'
-import { getNearEarthObjects } from '@/utils'
+import { getNearEarthObjects, addHttpsLink } from '@/utils'
 import { IAsteroidInfo, IResponseAPI } from '@/types'
 import css from './index.module.scss'
 
 
 const AsteroidList = ({ data }: { data: IResponseAPI }) => {
   const [state, dispatch] = useAppContext()
-  const [nextLink, setNextLink] = useState(data.links.next)
+  const [nextLink, setNextLink] = useState(addHttpsLink(data.links.next))
   const [fetchedAsteroids, setFetchedAsteroids] = useState<IAsteroidInfo[][]>([])
 
   const lastElement = useRef<HTMLDivElement>()
@@ -30,7 +30,7 @@ const AsteroidList = ({ data }: { data: IResponseAPI }) => {
       const nearEarthObjects = getNearEarthObjects(data).slice(1)
 
       setFetchedAsteroids([...fetchedAsteroids, ...nearEarthObjects])
-      setNextLink(data.links.next)
+      setNextLink(addHttpsLink(data.links.next))
     }
     observer.current = new IntersectionObserver(callback)
     observer.current.observe(lastElement.current)

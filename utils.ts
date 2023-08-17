@@ -73,3 +73,5 @@ export const getNearEarthObjects = (data: IResponseAPI) => {
       next[0].close_approach_data[0].close_approach_date ? 1 : -1
   })
 }
+
+export const addHttpsLink = (link: string) => 'https' + link.slice(4)
