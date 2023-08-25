@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import { memo } from 'react'
 import css from './index.module.scss'
 
 const SendButton = () => {
@@ -7,4 +8,4 @@ const SendButton = () => {
   </Link >
 }
 
-export default SendButton
+export default memo(SendButton)

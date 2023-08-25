@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import { memo } from 'react'
 import AsteroidImg from '../asteroidImage'
 import { IAsteroidInfo } from '@/types'
 import { getDiameter, getDistance, getFormattedDate, isDanger } from '@/utils'
@@ -45,4 +46,4 @@ const AsteroidCard = ({ asteroid, isKm, showBtn = true }: IProps) => {
   )
 }
 
-export default AsteroidCard
+export default memo(AsteroidCard)
